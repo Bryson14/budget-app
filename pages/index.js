@@ -11,11 +11,18 @@ import {
   execute_db_function,
 } from "../components/database";
 import React, { useState, useEffect } from "react";
+import Card from "../components/card";
 const USERNAME_KEY = "username";
 
-export default function Home(props) {
-  let build_time = new Date(props.buildTimestamp);
+export default function Home() {
   const [username, setUsername] = useState("User");
+
+  let fake_category_data = [
+    { icon: "🏎️", name: "Car Maintainance", amount: "50" },
+    { icon: "🏠", name: "House", amount: "150" },
+    { icon: "🥡", name: "Eating Out", amount: "50" },
+    { icon: "🤤", name: "Groceries", amount: "400" },
+  ];
 
   useEffect(() => {
     let default_name =
@@ -30,7 +37,7 @@ export default function Home(props) {
       <Head>
         <title key="">Budget App 2.0</title>
       </Head>
-      <div className="bg-cover h-screen grow bg-gray-50 py-6 flex flex-col justify-center relative sm:py-12">
+      <div className="bg-cover w-full h-screen grow bg-gray-50 py-6 flex flex-col justify-center relative sm:py-12">
         <div className="absolute inset-0 theme-gradient bg-center "></div>
         <div className="relative mb-4 px-6 pt-10 pb-8 bg-[#F3F5F7] shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
           <div className="max-w-md mx-auto">
@@ -51,6 +58,8 @@ export default function Home(props) {
                         }
                       }}
                       value={username}
+                      type="text"
+                      maxLength="15"
                     />
                   </div>
                 </div>
@@ -92,26 +101,14 @@ export default function Home(props) {
               </div>
               <div className="pt-8 text-base leading-7 font-semibold">
                 <p className="text-gray-900 text-lg">Transactions</p>
-                <div className="flex flex-row bg-white rounded-lg my-2 p-4">
-                  <div className="flex-none mr-2">Icon</div>
-                  <div className="flex-1 mx-4">Bought this</div>
-                  <div className="flex-initial">$36.21</div>
-                </div>
-                <div className="flex flex-row bg-white rounded-lg my-2 p-4">
-                  <div className="flex-none mr-2">Icon</div>
-                  <div className="flex-1 mx-4">Shoes</div>
-                  <div className="flex-initial">$36.21</div>
-                </div>
-                <div className="flex flex-row bg-white rounded-lg my-2 p-4">
-                  <div className="flex-none mr-2">Icon</div>
-                  <div className="flex-1 mx-4">okay</div>
-                  <div className="flex-initial">$36.21</div>
-                </div>
-                <div className="flex flex-row bg-white rounded-lg my-2 p-4">
-                  <div className="flex-none mr-2">Icon</div>
-                  <div className="flex-1 mx-4">apples</div>
-                  <div className="flex-initial">$36.21</div>
-                </div>
+                {fake_category_data.map((item, idx) => (
+                  <Card
+                    key={idx}
+                    icon={item.icon}
+                    name={item.name}
+                    amount={item.amount}
+                  />
+                ))}
               </div>
             </div>
           </div>
