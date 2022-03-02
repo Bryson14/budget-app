@@ -1,6 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const basePath = process.env.NODE_ENV === "production" ? "/budget-app" : "";
 
-module.exports = nextConfig
+module.exports = {
+  basePath,
+  reactStrictMode: true,
+  assetPrefix: `${basePath}/`,
+  images: {
+    loader: "akamai",
+    path: `${basePath}/`,
+  },
+};
