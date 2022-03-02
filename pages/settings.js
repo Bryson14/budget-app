@@ -149,7 +149,7 @@ export default function SettingsPage({ props }) {
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                           3
                         </td>
-                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
+                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                           Correct Base ID
                         </td>
                         <td
@@ -173,7 +173,7 @@ export default function SettingsPage({ props }) {
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                           5
                         </td>
-                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
+                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap ">
                           Category Table Exists
                         </td>
                         <td

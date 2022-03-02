@@ -30,13 +30,13 @@ export default function Home(props) {
       <Head>
         <title key="">Budget App 2.0</title>
       </Head>
-      <div className="bg-cover min-h-max grow bg-gray-50 py-6 flex flex-col justify-center relative sm:py-12">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-center "></div>
+      <div className="bg-cover h-screen grow bg-gray-50 py-6 flex flex-col justify-center relative sm:py-12">
+        <div className="absolute inset-0 theme-gradient bg-center "></div>
         <div className="relative mb-4 px-6 pt-10 pb-8 bg-[#F3F5F7] shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
           <div className="max-w-md mx-auto">
             <dialog
               id="profile-dialog"
-              className="transition duration-150 ease-in-out rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+              className="transition duration-150 ease-in-out rounded-2xl theme-gradient "
             >
               <form>
                 <div className="grid place-items-center">
@@ -67,7 +67,7 @@ export default function Home(props) {
               <div className="flex justify-start gap-x-6">
                 <div>
                   <div
-                    className="relative block bg-white rounded shadow p-2"
+                    className="relative block bg-white rounded-2xl shadow p-2"
                     onClick={() => {
                       document.getElementById("profile-dialog").showModal();
                     }}
@@ -95,7 +95,7 @@ export default function Home(props) {
               <div>
                 <Link href="/settings">
                   <a>
-                    <div className="relative block bg-white rounded shadow p-2">
+                    <div className="relative block bg-white rounded-2xl shadow p-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         enableBackground="new 0 0 24 24"
