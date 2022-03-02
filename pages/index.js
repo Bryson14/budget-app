@@ -20,7 +20,7 @@ export default function Home(props) {
   useEffect(() => {
     let default_name =
       localStorage.getItem(USERNAME_KEY) === null
-        ? "User"
+        ? "Your Name"
         : localStorage.getItem(USERNAME_KEY);
     setUsername(default_name);
   }, []);
@@ -34,60 +34,24 @@ export default function Home(props) {
         <div className="absolute inset-0 theme-gradient bg-center "></div>
         <div className="relative mb-4 px-6 pt-10 pb-8 bg-[#F3F5F7] shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
           <div className="max-w-md mx-auto">
-            <dialog
-              id="profile-dialog"
-              className="transition duration-150 ease-in-out rounded-2xl theme-gradient "
-            >
-              <form>
-                <div className="grid place-items-center">
-                  <input
-                    type="text"
-                    placeholder="Username"
-                    className="text-xl font-normal bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    value={username}
-                    onChange={(e) => {
-                      localStorage.setItem(USERNAME_KEY, e.target.value);
-                      setUsername(e.target.value);
-                    }}
-                  ></input>
-                </div>
-                <menu className="grid place-items-center">
-                  <button
-                    className="m-4 place-self-center bg-emerald-400 hover:bg-gradient-to-l from-emerald-500 via-pink-700 to-indigo-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    id="confirmBtn"
-                    value="default"
-                  >
-                    Done
-                  </button>
-                </menu>
-              </form>
-            </dialog>
-
             <div className="flex justify-between">
               <div className="flex justify-start gap-x-6">
                 <div>
-                  <div
-                    className="relative block bg-white rounded-2xl shadow p-2"
-                    onClick={() => {
-                      document.getElementById("profile-dialog").showModal();
-                    }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 0 24 24"
-                      width="24px"
-                      className="fill-black dark:fill-white"
-                    >
-                      <path d="M0 0h24v24H0V0z" fill="none" />
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
-                    </svg>
-                  </div>
-                </div>
-                <div>
                   <div className="relative block p-2">
-                    <p className="text-base text-slate-500">Welcome</p>
-                    <p className="text-2xl text-bold text-black">{username}</p>
+                    <p className="text-base text-slate-500 pl-6">Welcome</p>
+                    <input
+                      className="text-2xl text-bold text-black bg-transparent hover:theme-gradient hover:opacity-75 rounded-xl pl-6"
+                      onChange={(e) => {
+                        setUsername(e.target.value);
+                        // TODO keep a user from deleting their username?
+                        if (e.target.value === "") {
+                          localStorage.setItem(USERNAME_KEY, "Your Name");
+                        } else {
+                          localStorage.setItem(USERNAME_KEY, e.target.value);
+                        }
+                      }}
+                      value={username}
+                    />
                   </div>
                 </div>
               </div>
@@ -113,38 +77,41 @@ export default function Home(props) {
               </div>
             </div>
 
-            <div className="divide-y divide-gray-300/50">
-              <div className="py-8 text-base leading-7 space-y-6 text-gray-600">
-                <p>
-                  An advanced online playground for Tailwind CSS, including
-                  support for things like:
-                </p>
-
-                <p>
-                  Perfect for learning how the framework works, prototyping a
-                  new idea, or creating a demo to share online.
-                </p>
+            <div className="divide-gray-300/50">
+              <div className="flex py-8 text-base leading-7 space-y-6 text-white">
+                <div className="flex-1 theme-gradient rounded-2xl justify-center my-4 p-4 ">
+                  <div>Today&apos;s Budget</div>
+                  <div id="total-number" className="text-bold text-xl">
+                    $25.32
+                  </div>
+                  <div className="flex">
+                    <div className="flex-1">Some figure</div>
+                    <div className="flex-1">Another Fact</div>
+                  </div>
+                </div>
               </div>
               <div className="pt-8 text-base leading-7 font-semibold">
-                <p className="text-gray-900">
-                  Want to dig deeper into Tailwind?
-                </p>
-                <p>
-                  <a
-                    href="https://tailwindcss.com/docs"
-                    className="text-sky-500 hover:text-sky-600"
-                  >
-                    Read the docs &rarr;
-                  </a>
-                </p>
-                <p>more stuff</p>
-                <p>more stuff</p>
-                <p>more stuff</p>
-                <p>more stuff</p>
-                <p>more stuff</p>
-                <p>more stuff</p>
-                <p>more stuff</p>
-                <p>more stuff</p>
+                <p className="text-gray-900 text-lg">Transactions</p>
+                <div className="flex flex-row bg-white rounded-lg my-2 p-4">
+                  <div className="flex-none mr-2">Icon</div>
+                  <div className="flex-1 mx-4">Bought this</div>
+                  <div className="flex-initial">$36.21</div>
+                </div>
+                <div className="flex flex-row bg-white rounded-lg my-2 p-4">
+                  <div className="flex-none mr-2">Icon</div>
+                  <div className="flex-1 mx-4">Shoes</div>
+                  <div className="flex-initial">$36.21</div>
+                </div>
+                <div className="flex flex-row bg-white rounded-lg my-2 p-4">
+                  <div className="flex-none mr-2">Icon</div>
+                  <div className="flex-1 mx-4">okay</div>
+                  <div className="flex-initial">$36.21</div>
+                </div>
+                <div className="flex flex-row bg-white rounded-lg my-2 p-4">
+                  <div className="flex-none mr-2">Icon</div>
+                  <div className="flex-1 mx-4">apples</div>
+                  <div className="flex-initial">$36.21</div>
+                </div>
               </div>
             </div>
           </div>
