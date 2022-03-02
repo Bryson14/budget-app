@@ -66,9 +66,9 @@ export default function Add() {
 
   return (
     <>
-      <div className="min-h-max grow bg-gray-50 py-6 flex flex-col justify-center relative sm:py-12">
+      <div className="h-screen grow bg-gray-50 py-6 flex flex-col justify-center relative sm:py-12">
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-center "></div>
-        <div className="relative rounded-xl px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10 dark:bg-gradient-to-t dark:from-slate-500 dark:via-purple-900 dark:to-gray-800">
+        <div className="relative rounded-xl px-6 pt-10 pb-8 bg-[#F3F5F7] shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10 dark:bg-gradient-to-t dark:from-slate-500 dark:via-purple-900 dark:to-gray-800">
           <div className="absolute top-0 right-0 h-16 w-16 p-4 grid items-center">
             <Link href="/">
               <a>
@@ -126,7 +126,7 @@ export default function Add() {
                 </span>
                 <select
                   id="category-select"
-                  className="font-['Proxima Nova'] form-select transition ease-in-out shadow appearance-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="text-xl font-normal form-select transition ease-in-out shadow appearance-none bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                 >
