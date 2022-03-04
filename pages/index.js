@@ -145,7 +145,7 @@ export default function Home() {
                 <a className="w-full block py-5 px-3 my-3 mx-4 text-center hover:bg-blue-200 hover:text-blue-800">
                   <Image
                     src="/images/expand_less_black_24dp.svg"
-                    width={32}
+                    width={33}
                     height={32}
                     alt="See more"
                   />
