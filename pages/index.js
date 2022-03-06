@@ -87,20 +87,25 @@ export default function Home() {
             </div>
 
             <div className="divide-gray-300/50">
-              <div className="flex py-8 text-base leading-7 space-y-6 text-white">
+              <div className="flex py-2 pt-4 text-base leading-7 space-y-6 text-white">
                 <div className="flex-1 theme-gradient rounded-2xl justify-center my-4 p-4 ">
-                  <div>Today&apos;s Budget</div>
-                  <div id="total-number" className="text-bold text-xl">
+                  <div className="grow rounded-xl bg-slate-600 h-4 mb-2">
+                    <div className="bg-emerald-500 rounded h-2 m-1 my-2">
+                      &nbsp;
+                    </div>
+                  </div>
+                  <div
+                    id="total-number"
+                    className="text-bold text-2xl text-center"
+                  >
                     $25.32
                   </div>
-                  <div className="flex">
-                    <div className="flex-1">Some figure</div>
-                    <div className="flex-1">Another Fact</div>
+                  <div className="text-center text-sm">
+                    Today&apos;s Balance
                   </div>
                 </div>
               </div>
-              <div className="pt-8 text-base leading-7 font-semibold">
-                <p className="text-gray-900 text-lg">Transactions</p>
+              <div className="text-base leading-7 font-semibold">
                 {fake_category_data.map((item, idx) => (
                   <Card
                     key={idx}
