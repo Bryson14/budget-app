@@ -1,4 +1,4 @@
-export default function Card({ icon, name, amount }) {
+export default function DashboardCard({ icon, name, amount }) {
   return (
     <div className="bg-white rounded-lg my-2 p-4">
       <div className="flex flex-row ">

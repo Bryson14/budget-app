@@ -11,7 +11,7 @@ import {
   execute_db_function,
 } from "../components/database";
 import React, { useState, useEffect } from "react";
-import Card from "../components/card";
+import DashboardCard from "../components/card";
 const USERNAME_KEY = "username";
 
 export default function Home() {
@@ -107,7 +107,7 @@ export default function Home() {
               </div>
               <div className="text-base leading-7 font-semibold">
                 {fake_category_data.map((item, idx) => (
-                  <Card
+                  <DashboardCard
                     key={idx}
                     icon={item.icon}
                     name={item.name}
