@@ -98,7 +98,7 @@ export default function Home() {
                     id="total-number"
                     className="text-bold text-2xl text-center"
                   >
-                    $25.32
+                    $35.32
                   </div>
                   <div className="text-center text-sm">
                     Today&apos;s Balance
