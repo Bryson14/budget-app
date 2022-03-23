@@ -24,6 +24,26 @@ export default function Home() {
     { icon: "🤤", name: "Groceries", amount: "400" },
   ];
 
+  let fake_transaction_data = [
+    {
+      date: "03-02-2022",
+      category: "House",
+      amount: "15.32",
+      note: "pillows",
+      user: "Megatron",
+    },
+    {
+      date: "03-05-2022",
+      category: "Other",
+      amount: "97.36",
+      note: "ear cream",
+      user: "Dumbo",
+    },
+  ];
+
+  const [categoryData, setCategoryData] = useState(fake_category_data);
+  const [transactionData, setTransactiondata] = useState(fake_transaction_data);
+
   useEffect(() => {
     let default_name =
       localStorage.getItem(USERNAME_KEY) === null
@@ -124,7 +144,7 @@ export default function Home() {
         >
           <footer className="bottom-0 sticky ">
             <nav className="fixed bottom-0 inset-x-0 bg-blue-100 flex justify-between text-sm text-blue-900 uppercase font-mono relative">
-              <Link href="/">
+              <Link href="/categories">
                 <a className="w-full block py-5 px-3 my-3 mx-4 text-center hover:bg-blue-200 hover:text-blue-800 transition duration-300">
                   <Image
                     src="/images/view_list_black_24dp.svg"
