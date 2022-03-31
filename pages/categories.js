@@ -23,7 +23,7 @@ export default function CategoriesPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-center "></div>
         <div className="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
           <div className="flex justify-between">
-            <h1 className="text-xl font-bold ">Categories</h1>
+            <h1 className="text-xl font-bold text-slate-700">Categories</h1>
             <Link href="/">
               <a className="">
                 <Image
