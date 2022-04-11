@@ -11,6 +11,7 @@ export default function Add() {
   const [category, setCategory] = useState("");
 
   useEffect(() => {
+    // error message visibility
     if (Number(price) < 0) {
       document.getElementById(
         "message-div"
@@ -24,6 +25,17 @@ export default function Add() {
     }
   });
 
+  // only runs once on page load
+  useEffect(() => {
+    // setting category drop down list from url params
+    const category_key = "category";
+    const queryParams = new URLSearchParams(window.location.search);
+    const category = queryParams.get(category_key);
+    queryParams.delete(category_key);
+    console.log(`The category is ${category}`);
+    setCategory(category);
+  }, []);
+
   // TODO add a user into the form submit?
 
   const handle_submit = () => {
@@ -33,7 +45,6 @@ export default function Add() {
   };
 
   const validate_and_set_price = (p) => {
-    debugger;
     // how to make a minus sign on iphone keyboard layout
     if (p === "..") {
       setPrice("-");
@@ -59,6 +70,8 @@ export default function Add() {
         setPrice(p);
       } else {
         // hundreths place exist or smaller
+        // todo toFixed can cause the rounding number when a number with 2 numbers after the decimal
+        // is entered and the user keeps trying to enter a number.
         setPrice(Number(p).toFixed(2));
       }
     }
@@ -130,10 +143,10 @@ export default function Add() {
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                 >
-                  <option value="home" className="p2-2">
-                    Home
+                  <option value="House" className="p2-2">
+                    House
                   </option>
-                  <option value="car" className="p2-2">
+                  <option value="Car Maintainance" className="p2-2">
                     Car
                   </option>
                   <option value="b-fun-money" className="p2-2">
