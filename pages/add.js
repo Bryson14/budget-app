@@ -77,6 +77,8 @@ export default function Add() {
     }
   };
 
+  // TODO stop user from putting in transaction in the future
+
   return (
     <>
       <div className="h-screen grow bg-gray-50 py-6 flex flex-col justify-center relative sm:py-12">
@@ -105,15 +107,15 @@ export default function Add() {
 
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="px-3 pt-6 pb-8 mb-4"
+            className="px-3 pt-2 pb-8 mb-4"
           >
             <div className="grid justify-around">
               <div className="mb-8">
-                <span className="absolute pl-6 text-bold text-gray-700 leading-tight py-1 text-slate-500 text-3xl">
+                <span className="absolute pl-6 text-bold text-gray-700 leading-tight py-1 text-slate-500 text-5xl">
                   $
                 </span>
                 <input
-                  className="text-center text-bold text-2xl block w-full text-emerald-400 appearance-none border rounded-3xl  py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="text-center text-bold text-5xl block w-full text-emerald-400 appearance-none border rounded-full  py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   id="price_input"
                   type="text"
                   inputMode="decimal"
@@ -123,7 +125,7 @@ export default function Add() {
                   onChange={(e) => validate_and_set_price(e.target.value)}
                 />
               </div>
-              <div className="mb-6 xl:w-96">
+              <div className="mb-6">
                 <span className="absolute p-2.5 z-1000">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +197,7 @@ export default function Add() {
                     </svg>
                   </span>
                   <input
-                    className="appearance-none bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="text-xl appearance-none bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     id="date-input"
                     type="date"
                     value={date}
